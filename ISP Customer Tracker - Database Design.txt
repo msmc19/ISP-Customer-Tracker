@@ -1,0 +1,45 @@
+The database is structured around four main entities: Customers, Locations, Services, Equipment, and Billing. Each table contains specific fields, and there are foreign key relationships that establish links between the tables.
+
+Tables:
+
+1. Customers Table  
+   - customer_id (Primary Key): Unique identifier for each customer.
+   - name: The name of the customer.
+   - phone_number: The contact number of the customer.
+
+2. Locations Table  
+   - location_id (Primary Key): Unique identifier for each location.
+   - customer_id (Foreign Key): Links each location to a customer.
+   - address: The address of the location (e.g., "1234 Street Rd, City, State").
+
+3. Services Table  
+   - service_id (Primary Key): Unique identifier for each service.
+   - location_id (Foreign Key): Links each service to a specific location.
+   - service_name: The name of the service provided (e.g., Internet, Cable).
+   - cost: The cost of the service.
+
+4. Equipment Table  
+   - equipment_id (Primary Key): Unique identifier for each piece of equipment.
+   - location_id (Foreign Key): Links each piece of equipment to a specific location.
+   - equipment_name: The name of the equipment (e.g., Router, Modem).
+   - cost: The cost of the equipment.
+
+5. Billing Table  
+   - billing_id (Primary Key): Unique identifier for each billing record.
+   - customer_id (Foreign Key): Links each billing record to a specific customer.
+   - amount_due: The amount the customer owes.
+   - last_payment_date: The date of the last payment made by the customer.
+   - is_late: Boolean flag indicating whether the payment is overdue.
+
+Relationships:
+
+- Customers to Locations: A customer can have multiple locations, but each location is associated with only one customer.
+- Locations to Services: Each location can have multiple services, but each service belongs to only one location.
+- Locations to Equipment: Each location can have multiple pieces of equipment, but each piece of equipment belongs to only one location.
+- Customers to Billing: A customer can have multiple billing records, and each billing record is associated with a single customer.
+
+Explanation of Design:
+
+The database is designed to represent the hierarchical relationships between customers, their locations, the services and equipment at those locations, and the billing information related to the services provided. The use of primary keys ensures each record is uniquely identifiable, and foreign keys create relationships between the entities, ensuring data integrity.
+
+This design was chosen to ensure that the system can track multiple locations, services, and equipment for each customer, while also allowing for detailed billing information. The normalized structure avoids data redundancy and ensures efficient storage and retrieval of information.

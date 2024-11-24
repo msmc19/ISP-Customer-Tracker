@@ -1,0 +1,102 @@
+The ISP Customer Tracking System is designed to manage customer data, including locations, services, equipment, and billing information. The system allows users (administrators) to add, update, and remove records, as well as view various aspects of customer data. The following sections describe the flow of user actions through the application.
+
+Architecture Overview:
+
+The software is structured into two main files:
+1. main.py: Handles user interaction, presents menu options, and collects input.
+2. database.py: Manages database operations, including creating tables and executing queries.
+
+The flow of the program is menu-driven, where the user selects an option from the menu, and the program calls the appropriate function in database.py to perform the required action.
+
+Flow of User Actions:
+
+1. Adding a New Customer
+   - User Action: The user selects "Add a New Customer" from the menu.
+   - Program Flow:
+     1. The prompt_add_customer() function in main.py is called.
+     2. The user's input for customer name and phone number is collected.
+     3. The add_customer() function in database.py is called, which inserts the customer into the database.
+     4. A success message is displayed to the user.
+   - Key Functions:
+     - prompt_add_customer() in main.py
+     - add_customer() in database.py
+
+2. Removing a Customer
+   - User Action: The user selects "Remove a Customer" from the menu.
+   - Program Flow:
+     1. The prompt_remove_customer() function in main.py is called.
+     2. The customer ID is collected from the user.
+     3. The remove_customer() function in database.py is called to delete the customer.
+     4. A success message is displayed to the user.
+   - Key Functions:
+     - prompt_remove_customer() in main.py
+     - remove_customer() in database.py
+
+3. Adding a Location
+   - User Action: The user selects "Add a New Location for a Customer" from the menu.
+   - Program Flow:
+     1. The prompt_add_location() function in main.py is called.
+     2. The user provides the customer ID and address.
+     3. The add_location() function in database.py inserts the location into the database.
+     4. A success message is displayed to the user.
+   - Key Functions:
+     - prompt_add_location() in main.py
+     - add_location() in database.py
+
+4. Adding a Service
+   - User Action: The user selects "Add a New Service to a Location" from the menu.
+   - Program Flow:
+     1. The prompt_add_service() function in main.py is called.
+     2. The user provides the location ID, service name, and cost.
+     3. The add_service() function in database.py adds the service to the database.
+     4. A success message is displayed to the user.
+   - Key Functions:
+     - prompt_add_service() in main.py
+     - add_service() in database.py
+
+5. Adding Equipment
+   - User Action: The user selects "Add New Equipment to a Location" from the menu.
+   - Program Flow:
+     1. The prompt_add_equipment() function in main.py is called.
+     2. The user provides the location ID, equipment name, and cost.
+     3. The add_equipment() function in database.py inserts the equipment into the database.
+     4. A success message is displayed to the user.
+   - Key Functions:
+     - prompt_add_equipment() in main.py
+     - add_equipment() in database.py
+
+6. Updating Service Cost
+   - User Action: The user selects "Update Service Cost" from the menu.
+   - Program Flow:
+     1. The prompt_change_service_cost() function in main.py is called.
+     2. The user provides the service ID and the new cost.
+     3. The change_service_cost() function in database.py updates the cost of the service.
+     4. A success message is displayed to the user.
+   - Key Functions:
+     - prompt_change_service_cost() in main.py
+     - change_service_cost() in database.py
+
+7. Viewing Customers with Overdue Payments
+   - User Action: The user selects "View Customers with Overdue Payments" from the menu.
+   - Program Flow:
+     1. The prompt_view_customers_late_on_payment() function in main.py is called.
+     2. The view_customers_late_on_payment() function in database.py retrieves a list of customers who are late on payments.
+     3. The result is displayed to the user.
+   - Key Functions:
+     - prompt_view_customers_late_on_payment() in main.py
+     - view_customers_late_on_payment() in database.py
+
+8. Viewing All Customers
+   - User Action: The user selects "View All Registered Customers" from the menu.
+   - Program Flow:
+     1. The view_customers() function in main.py is called.
+     2. The view_customers() function in database.py retrieves a list of all customers.
+     3. The display_customer_info(), display_customer_locations(), and display_billing_info() functions in main.py are called to display each customer's details, including locations, services, equipment, and billing.
+   - Key Functions:
+     - view_customers() in main.py
+     - view_customers() in database.py
+     - display_customer_info(), display_customer_locations(), display_billing_info() in main.py
+
+Summary:
+
+The program is structured with clear separation of concerns between the user interface (handled in main.py) and the database operations (handled in database.py). The user’s actions drive the flow of the application, triggering specific functions that interact with the database to perform CRUD (Create, Read, Update, Delete) operations.
