@@ -46,9 +46,6 @@ The schema is **fully normalized** to avoid redundancy and ensure referential in
 
 ---
 
-
----
-
 ### Prerequisites
 * **Python 3.9+**  
 * **PostgreSQL 14+**  
