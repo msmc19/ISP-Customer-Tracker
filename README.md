@@ -6,9 +6,8 @@ Menu‑driven Python application that manages ISP customers, their service locat
 1. [Project Overview](#project-overview)  
 2. [Architecture](#architecture)  
 3. [Database Design](#database-design)  
-4. [Repository Layout](#repository-layout)  
-5. [Prerequisites](#prerequisites)  
-6. [Installation & Setup](#installation--setup)  
+4. [Prerequisites](#prerequisites)  
+5. [Installation & Setup](#installation--setup)  
 
 ---
 
